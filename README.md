@@ -78,7 +78,7 @@ Your project will include a web app where an emergency worker can input a new me
 
 
 ## Executing Scripts - Instructions:
-### Run the following commands in the project's root directory to set up database and model:
+### Go to the project's root directory and type the following commands:
 
 Part 1 - Running ```process_data.py```
 
@@ -90,9 +90,13 @@ Part 2 - Running ```train_classifier.py```
 
 Part 3 - Running ```run.py```
 
-`python run.py`
+Go to the app folder and type `python run.py`
 
-#### Go to http://0.0.0.0:3001/
+Part 4 - Visualizing the Web app
+
+Type ```env | grep WORK``` to retrieve your workspace ID and workspace domain so you can access the web application
+
+Go to http://WORKSPACEID-3001.WORKSPACEDOMAIN
 
 
 ## Results
