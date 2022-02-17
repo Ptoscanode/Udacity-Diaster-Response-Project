@@ -2,12 +2,11 @@
 
 ## Project Motivation
 
-In this project, you'll apply these skills to analyze disaster data from Figure Eight to build a model for an API that classifies disaster messages.
+This project consists of analyzing disaster data from Figure Eight to build a model for an API that classifies disaster messages.
 
-In the Project Workspace, you'll find a data set containing real messages that were sent during disaster events. You will be creating a machine learning pipeline to categorize these events so that you can send the messages to an appropriate disaster relief agency.
+We used a data set containing real messages that were sent during disaster events. Then, a machine learning pipeline was created to categorize these events so that we can send the messages to an appropriate disaster relief agency.
 
-Your project will include a web app where an emergency worker can input a new message and get classification results in several categories. The web app will also display visualizations of the data. This project will show off your software skills, including your ability to create basic data pipelines and write clean, organized code!
-
+This project also includes a web app where an emergency worker can input a new message and get classification results in several categories. The web app also displays visualizations of the data
 
 
 ## Requirements
@@ -96,7 +95,7 @@ Part 4 - Visualizing the Web app
 
 Type ```env | grep WORK``` to retrieve your workspace ID and workspace domain so you can access the web application
 
-Go to http://WORKSPACEID-3001.WORKSPACEDOMAIN
+Go to http://WORKSPACEID-3001.WORKSPACEDOMAIN to visualize the page and type a word to test the classifier
 
 
 ## Results
