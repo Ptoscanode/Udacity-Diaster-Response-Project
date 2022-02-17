@@ -44,8 +44,8 @@ Your project will include a web app where an emergency worker can input a new me
 |- disaster_model.pkl  # saved model
 
 - notebooks
-|- ETL Pipeline Preparation.ipynb # Jupyter notebook used to load and cleanse the data
-|- ML Pipeline Preparation.ipynb # Jupyter notebook used to 
+|- ETL Pipeline Preparation.ipynb # Jupyter notebook used to load and cleanse the data. The code in this notebook was modularized into ```process_data.py```
+|- ML Pipeline Preparation.ipynb  # Jupyter notebook used to run the Machine model. The code in this notebook was modularized into ```train_classifier.py``` 
 
 - README.md
 ```
@@ -75,6 +75,24 @@ Your project will include a web app where an emergency worker can input a new me
 1. Loads data from the SQLite database
 2. Loads the model (pickle file) saved at the end of train_classifier.py
 3. Displays visuals and receives user input text for model
+
+
+## Executing Scripts - Instructions:
+### Run the following commands in the project's root directory to set up database and model:
+
+Part 1 - Running ```process_data.py```
+
+`python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+
+Part 2 - Running ```train_classifier.py```
+
+`python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+
+Part 3 - Running ```run.py```
+
+`python run.py`
+
+#### Go to http://0.0.0.0:3001/
 
 
 ## Results
