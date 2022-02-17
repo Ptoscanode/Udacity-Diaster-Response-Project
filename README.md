@@ -25,6 +25,8 @@ Your project will include a web app where an emergency worker can input a new me
 ## Files in the Repository
 
 ### Folders
+
+```
 - app
 | - template
 | |- master.html  # main page of web app
@@ -46,7 +48,7 @@ Your project will include a web app where an emergency worker can input a new me
 |- ML Pipeline Preparation.ipynb # Jupyter notebook used to 
 
 - README.md
-
+```
 
 ### Scripts
 
