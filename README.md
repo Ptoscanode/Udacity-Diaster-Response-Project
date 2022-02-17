@@ -69,6 +69,14 @@ Your project will include a web app where an emergency worker can input a new me
 5. Outputs results on the test set
 6. Exports the final model as a pickle file
 
+
+```run.py```: This script does the following
+
+1. Loads data from the SQLite database
+2. Loads the model (pickle file) saved at the end of train_classifier.py
+3. Displays visuals and receives user input text for model
+
+
 ## Results
 
 Results can be found in the folder "Screenshots"
