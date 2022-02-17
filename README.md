@@ -12,16 +12,60 @@ Your project will include a web app where an emergency worker can input a new me
 
 ## Requirements
 - Python 3.5+
-- NumPy, SciPy, Pandas, Sciki-Learn
+- NumPy
+- Pandas
+- SciPy
+- Sciki-Learn
 - NLTK
 - SQLalchemy
 - Pickle library
-- Flask, Plotly
+- Flask
+- Plotly
 
 ## Files in the Repository
 
-```Airbnb Project.ipynb```: Jupyter notebook containing analysis of the project
+### Folders
+- app
+| - template
+| |- master.html  # main page of web app
+| |- go.html  # classification result page of web app
+|- run.py  # Flask file that runs app
 
+- data
+|- disaster_categories.csv  # input data 
+|- disaster_messages.csv  # data to process
+|- process_data.py
+|- DisasterResponse.db   # database where the data will be saved
+
+- models
+|- train_classifier.py
+|- disaster_model.pkl  # saved model
+
+- notebooks
+|- ETL Pipeline Preparation.ipynb # Jupyter notebook used to load and cleanse the data
+|- ML Pipeline Preparation.ipynb # Jupyter notebook used to 
+
+- README.md
+
+
+### Scripts
+
+```process_data.py```: This script does the following
+
+1. Loads the messages and categories datasets
+2. Merges the two datasets
+3. Cleans the data
+4. Stores it in a SQLite database
+
+
+```train_classifier.py```: This script does the following
+
+1. Loads data from the SQLite database
+2. Splits the dataset into training and test sets
+3. Builds a text processing and machine learning pipeline
+4. Trains and tunes a model using GridSearchCV
+5. Outputs results on the test set
+6. Exports the final model as a pickle file
 
 ## Results
 
