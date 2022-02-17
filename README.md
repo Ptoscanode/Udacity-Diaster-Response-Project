@@ -11,16 +11,35 @@ Your project will include a web app where an emergency worker can input a new me
 
 
 ## Requirements
-
+- Python 3.5+
+- NumPy, SciPy, Pandas, Sciki-Learn
+- NLTK
+- SQLalchemy
+- Pickle library
+- Flask, Plotly
 
 ## Files in the Repository
 
+```Airbnb Project.ipynb```: Jupyter notebook containing analysis of the project
 
 
 ## Results
 
+Results can be found in the folder "Screenshots"
+
 
 ## Acknowledgements
-
-
-
+https://pandas.pydata.org
+<br/>
+https://numpy.or
+http://nltk.org</br/>
+<br/>
+https://scikit-learn.org
+<br/>
+https://www.sqlalchemy.org/
+<br/>
+https://github.com/othneildrew/Best-README-Template/blob/master/README.md
+</br>
+https://flask.palletsprojects.com/en/2.0.x/
+</br>
+https://plotly.com/
