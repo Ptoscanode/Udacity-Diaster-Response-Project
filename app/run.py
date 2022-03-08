@@ -9,6 +9,7 @@ from nltk.tokenize import word_tokenize
 from flask import Flask
 from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar
+from plotly.graph_objs import Heatmap
 import sqlalchemy
 from sqlalchemy import create_engine
 
@@ -31,12 +32,12 @@ print('Loading data')
 table_name  = 'disaster_response_mod'
 engine = create_engine('sqlite:///../data/DisasterResponse.db')
 df = pd.read_sql_table(table_name, engine)
-print('Data loaded!')
+print("Data loaded! Now, let's load the model!")
 
 ### Loading model
 print('Loading model')
-model = joblib.load("../models/disaster_response_model.pkl")
-print("Model loaded! Now, let's display the Web page!")
+model = joblib.load("../models/classifier.pkl")
+print("Model loaded! Now, let's display all images!")
 
 
 # index webpage displays cool visuals and receives user input text for model
@@ -46,29 +47,55 @@ def index():
     
     # extract data needed for visuals
     # TODO: Below is an example - modify to extract data for your own visuals
+    
+    # Bar chart data
+    print('Preparing the data for plotting')    
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
+    
+    # Heatmap data
+    columns_to_drop = ['id', 'message', 'original', 'genre']
+    df2 = df.drop(columns_to_drop, axis=1).astype(float)
+    categories = df2.columns.values
+    category_count = [sum(df2[cat]) for cat in categories]
+    correlation = df2.corr()
+    correlation_val = correlation.values
     
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
     graphs = [
         {
-            'data': [
-                Bar(
-                    x=genre_names,
-                    y=genre_counts
-                )
-            ],
+            'data': [Bar(x=genre_names, y=genre_counts)],
 
             'layout': {
-                'title': 'Distribution of Message Genres',
-                'yaxis': {
-                    'title': "Count"
-                },
-                'xaxis': {
-                    'title': "Genre"
-                }
-            }
+                      'title': 'Distribution of Message Genres',
+                       'yaxis': {'title': "Count"},
+                       'xaxis': {'title': "Genre"}
+                      }
+        },
+        
+        {
+            'data' : [Bar(x=categories, y=category_count)],          
+        
+        
+            'layout': {
+                       'title': 'Distribution of Categories',
+                       'yaxis': {'title': "Count"},
+                       'xaxis': {'title': "Genre"}
+                      }
+        
+        },
+        
+        
+        {
+            'data' : [Heatmap(z=correlation_val, x=categories, y=categories)],          
+        
+        
+            'layout': {
+                       'title': 'Heatmap of Categories Correlation',
+                       'height': 1500
+                      }
+        
         }
     ]
     
