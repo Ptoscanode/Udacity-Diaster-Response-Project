@@ -88,7 +88,7 @@ def index():
         
         
         {
-            'data' : [Heatmap(z=correlation_val, x=categories, y=categories)],          
+            'data' : [Heatmap(x=categories, y=categories, z=correlation_val)],          
         
         
             'layout': {
