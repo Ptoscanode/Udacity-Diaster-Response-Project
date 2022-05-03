@@ -106,8 +106,8 @@ Results can be found in the folder "Screenshots"
 ## Acknowledgements
 https://pandas.pydata.org
 <br/>
-https://numpy.or
-http://nltk.org</br/>
+https://numpy.org
+http://nltk.org
 <br/>
 https://scikit-learn.org
 <br/>
