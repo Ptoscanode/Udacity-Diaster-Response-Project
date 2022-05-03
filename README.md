@@ -1,4 +1,4 @@
-# Udacity-Diaster-Response-Project
+# Udacity-Disaster-Response-Project
 
 ## Project Motivation
 
